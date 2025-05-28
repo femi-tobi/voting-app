@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const chartsContainer = document.getElementById("chartsContainer");
 
     const positions = {
-    "Chairman": ["Jimoh Isiaka", "Ejike eberechi"],
-    "Vice President": ["Ajadi Wasiu"],
-    "Branch Secetary": ["Oni Mary"],
-    "Branch Ass Secetary": ["MikeGbeniniyi Taiwo"],
-    "Treasurer": ["Obideyi Funmi"],
-    "Finacial Secetary": ["Ikechukwu Mora", "Udukwu Eucharia"],
-    "Auditor": ["Ronke Ojugbele", "Makinde E. O"]
+    "Chairman": ["Jimoh Isiaka", "Ejike Eberechi"],
+    "Vice President": ["Gbeniniyi Taiwo"],
+    "Branch Secetary": ["Oni Mary", "ECHENINI EMMANUEL CHIDI"],
+    "Branch Ass Secetary": ["AJADI WASIU"],
+    "Treasurer": ["MAKINDE E.O", "OBIDEYI FUNMI"],
+    "Finacial Secetary": ["NDUKWE EUCHARIA", "IKECHUKWU MORAH"],
+    "Auditor": ["OJUGBELE OYEDE RONKE"]
   };
 
   for (const [position, candidates] of Object.entries(positions)) {
