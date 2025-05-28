@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const chartsContainer = document.getElementById("chartsContainer");
 
     const positions = {
-    "Chairman": ["Jimoh Isiaka", "Ejike Eberechi"],
-    "Vice President": ["Gbeniniyi Taiwo"],
-    "Branch Secetary": ["Oni Mary", "ECHENINI EMMANUEL CHIDI"],
-    "Branch Ass Secetary": ["AJADI WASIU"],
+    "Chairman": ["JIMOH ISIAKA", "EJIKI EBERECHI"],
+    "Vice Chairman": ["GBEMINIYI TAIWO"],
+    "General Secetary": ["ONI MARY", "ECHENINI EMMANUEL CHIDI"],
+    "Ass General Secetary": ["AJADI WASIU"],
     "Treasurer": ["MAKINDE E.O", "OBIDEYI FUNMI"],
     "Finacial Secetary": ["NDUKWE EUCHARIA", "IKECHUKWU MORAH"],
     "Auditor": ["OJUGBELE OYEDE RONKE"]
