@@ -19,7 +19,7 @@ db.serialize(() => {
   db.run("CREATE TABLE IF NOT EXISTS staff (email TEXT PRIMARY KEY)");
   db.run("CREATE TABLE IF NOT EXISTS votes (email TEXT PRIMARY KEY, data TEXT)");
 
-  const emails = ['tobs@example.com', 'fems@example.com', 'bola@example.com', 'ayo@example.com'];
+  const emails = ['tobs@example.com', 'fems@example.com', 'bola@example.com', 'koyeniyi@may-baker.com'];
   const stmt = db.prepare('INSERT OR IGNORE INTO staff(email) VALUES (?)');
   emails.forEach(email => stmt.run(email));
   stmt.finalize();
