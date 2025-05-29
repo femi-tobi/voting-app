@@ -227,6 +227,24 @@ app.post('/api/vote', (req, res) => {
   });
 });
 
+app.post('/admin/delete-votes', async (req, res) => {
+  const { secret } = req.body;
+
+  // ✅ Replace this with your own strong secret
+  if (secret !== 'admin123') {
+    return res.status(401).send({ message: 'Unauthorized: Invalid secret key' });
+  }
+
+  try {
+    await db.run('DELETE FROM votes');
+    res.send({ message: 'All votes deleted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ message: 'Failed to delete votes' });
+  }
+});
+
+
 app.get('/admin/votes', (req, res) => {
   db.all('SELECT email, data FROM votes', [], (err, rows) => {
     if (err) return res.status(500).json({ success: false, message: 'Failed to fetch votes.' });
