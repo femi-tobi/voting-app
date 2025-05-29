@@ -200,7 +200,22 @@ db.serialize(() => {
 'Kemibalogun2018@gmail.com',
 'Imohdavid1900@gmail.com',
 'Gloriaemmanuel63@gmail.com',
-'kehindelawal927@gmail.com'
+'kehindelawal927@gmail.com',
+'owolumisturadamilola@gmail.com',
+'wuraolaakinpelu460@gmail.com',
+'samogbonna2@gmail.com',
+'chiomaonowoh21@gmail.com',
+'fatemap1994@gmail.com',
+'ajuluchukwuchibuzor@gmail.com',
+'idajilimed@gmail.com',
+'dakwaiemma84@gmail.com',
+'haladualiyu445@gmail.com',
+'chinelogoodness1@gmail.com',
+'jokeoladipupoforeal@gmail.com',
+'elorabaekenechukwu@gmail.com',
+'simplysylviaatseye@gmail.com',
+'ayanfeoluwa.am56@gmail.com',
+
 ];
   const stmt = db.prepare('INSERT OR IGNORE INTO staff(email) VALUES (?)');
   emails.forEach(email => stmt.run(email));
@@ -227,7 +242,7 @@ app.post('/api/vote', (req, res) => {
   });
 });
 
-app.post('/admin/delete-votes', async (req, res) => {
+app.get('/admin/delete-votes', async (req, res) => {
   const { secret } = req.body;
 
   // ✅ Replace this with your own strong secret
