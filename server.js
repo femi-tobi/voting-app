@@ -214,6 +214,7 @@ db.serialize(() => {
 'jokeoladipupoforeal@gmail.com',
 'elorabaekenechukwu@gmail.com',
 'simplysylviaatseye@gmail.com',
+'omoseketayo@gmail.com',
 'ayanfeoluwa.am56@gmail.com',
 
 ];
