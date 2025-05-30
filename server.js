@@ -273,6 +273,10 @@ app.get('/admin/votes', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/results', (req, res) => {
   db.all('SELECT data FROM votes', [], (err, rows) => {
     if (err) return res.status(500).json({ success: false, message: 'Failed to fetch results.' });
@@ -291,6 +295,11 @@ app.get('/api/results', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
