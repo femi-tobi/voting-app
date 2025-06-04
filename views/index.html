@@ -3,39 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voting App</title>
+  <title>Voting App - May and Baker CANMPSSAN</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="/script.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="relative min-h-screen bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 text-white font-sans">
+<body class="relative min-h-screen bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 text-white font-sans">
   <!-- Watermark Image -->
   <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-    <img src="images.png" alt="may and baker logo" class="opacity-20 w-1/2" />
+    <img src="images.png" alt="may and baker logo" class="opacity-15 w-1/2" />
   </div>
 
   <!-- Main Content -->
-  <div class="relative z-10 max-w-4xl mx-auto p-1">
-    <h1 class="text-2xl font-bold mb-4 text-center">MAY AND BAKER CANMPSSAN BRANCH ELECTION</h1>
-    <h3>Please vote your prefered candidate. If you have issue voting, please visit the IS department!!!</h3>
-    <div class="mb-4">
-      <input id="emailInput" type="email" placeholder="Enter your company email"
-        class="w-full p-2 border border-gray-300 text-black rounded" />
-    </div>
-    <form id="voteForm" class="space-y-4">
-      <!-- Positions will be inserted here -->
-    </form>
-    <button id="submitBtn"
-      class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-pink-500 hover:to-purple-500 shadow-lg text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
-      Submit Vote
-    </button>
+  <div class="relative z-10 min-h-screen">
+    <!-- Header Section -->
+    <header class="py-6 px-4 backdrop-blur-sm bg-white/10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-2 tracking-wider">
+          MAY AND BAKER
+        </h1>
+        <h2 class="text-xl md:text-2xl font-semibold text-center text-white/90 mb-4">
+          CANMPSSAN BRANCH ELECTION
+        </h2>
+        <div class="max-w-2xl mx-auto">
+          <p class="text-center text-white/80 bg-white/10 p-3 rounded-lg shadow-lg">
+            <i class="fas fa-info-circle mr-2"></i>
+            Please vote for your preferred candidate. If you experience any issues while voting, kindly visit the IS department.
+          </p>
+        </div>
+      </div>
+    </header>
 
-    <h2 class="text-xl font-bold mt-8 mb-2">Live Results</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="chartsContainer">
-      <!-- Charts go here -->
+    <!-- Voting Section -->
+    <main class="max-w-4xl mx-auto p-6">
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl mb-8">
+        <div class="mb-6">
+          <label for="emailInput" class="block text-sm font-medium mb-2">Company Email</label>
+          <div class="relative">
+            <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input id="emailInput" type="email" placeholder="Enter your company email"
+              class="w-full pl-10 p-3 bg-white/90 border border-white/20 text-gray-800 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" />
+          </div>
+        </div>
+
+        <form id="voteForm" class="space-y-6">
+          <!-- Positions will be inserted here -->
+        </form>
+
+        <button id="submitBtn"
+          class="w-full mt-6 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 shadow-lg">
+          <i class="fas fa-vote-yea mr-2"></i>
+          Submit Vote
+        </button>
+      </div>
+
+      <!-- Results Section -->
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+          <i class="fas fa-chart-bar mr-3"></i>
+          Live Results
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="chartsContainer">
+          <!-- Charts go here -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white/70 backdrop-blur-sm bg-white/5 mt-8">
+      <p>&copy; 2024 May and Baker Nigeria Plc. All rights reserved.</p>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl">
+        <div class="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent mx-auto"></div>
+        <p class="mt-4 text-white font-medium">Processing your vote...</p>
+      </div>
     </div>
   </div>
-</body>
 
+  <script>
+    // Add loading overlay functionality
+    const form = document.getElementById('voteForm');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    
+    form.addEventListener('submit', (e) => {
+      loadingOverlay.classList.remove('hidden');
+    });
+  </script>
+</body>
 </html>
