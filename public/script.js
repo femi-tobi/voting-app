@@ -9,9 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "Vice Chairman": ["GBEMINIYI TAIWO"],
     "General Secetary": ["ONI MARY", "ECHENINI EMMANUEL CHIDI"],
     "Ass General Secetary": ["AJADI WASIU"],
-    "Treasurer": ["MAKINDE E.O", "OBIDEYI FUNMI"],
-    "Finacial Secetary": ["NDUKWE EUCHARIA", "IKECHUKWU MORAH"],
-    "Auditor": ["OJUGBELE OYEDE RONKE"]
+    "Treasurer": ["OBIDEYI FUNMI"],
+    "Finacial Secetary": ["IKECHUKWU MORAH"],
+    "Auditor": ["OJUGBELE OYEDE RONKE", "AWE FISAYO PAUL"],
+    "PRO 1": ["MAKINDE E.O"],
+    "Trustee 1": ["NDUKWE EUCHARIA"],
+    "Welfare": ["Nill"],
   };
 
   for (const [position, candidates] of Object.entries(positions)) {
